@@ -38,12 +38,7 @@ Citizen.CreateThread(function()
 				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(GetPlayerPed(-1), false), 2.0 * 18.0)
 			elseif vehClass == 6 then
 				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(GetPlayerPed(-1), false), 2.0 * 11.0)
-			elseif vehClass == 5 then
-				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(GetPlayerPed(-1), false), 2.0 * 7.0)
-			elseif vehClass == 8 then
-				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(GetPlayerPed(-1), false), 2.0 * 4.0)
-				-- LSPD / EMS
-			elseif vehClass == 18 then
+			elseif vehClass == 18 then -- Emergency cars
 				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(GetPlayerPed(-1), false), 2.0 * 20.0)
 			elseif vehClass == 16 then
 				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(ped, false), 2.0 * 500.0)
