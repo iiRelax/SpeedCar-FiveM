@@ -27,22 +27,21 @@ Vehicle Classes:
 ]] 
 
 Citizen.CreateThread(function() 
-	local headId = {}
-	while true do
-		Citizen.Wait(1000)
-		ped = PlayerPedId()
-		if IsPedSittingInAnyVehicle(ped) then
-			local veh = GetVehiclePedIsIn(ped, false)
-			local vehClass = GetVehicleClass(veh)
-			if vehClass == 7 then
-				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(GetPlayerPed(-1), false), 2.0 * 18.0)
-			elseif vehClass == 6 then
-				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(GetPlayerPed(-1), false), 2.0 * 11.0)
-			elseif vehClass == 18 then -- Emergency cars
-				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(GetPlayerPed(-1), false), 2.0 * 20.0)
-			elseif vehClass == 16 then
-				SetVehicleEnginePowerMultiplier(GetVehiclePedIsIn(ped, false), 2.0 * 500.0)
-			end
-		end
-	end
+    while true do
+        Citizen.Wait(1000)
+        local ped = PlayerPedId()
+        if IsPedSittingInAnyVehicle(ped) then
+            local veh = GetVehiclePedIsIn(ped, false)
+            local vehClass = GetVehicleClass(veh)
+            if vehClass == 7 then
+                SetVehicleEnginePowerMultiplier(veh, 2.0 * 18.0)
+            elseif vehClass == 6 then
+                SetVehicleEnginePowerMultiplier(veh, 2.0 * 11.0)
+            elseif vehClass == 18 then -- Emergency cars
+                SetVehicleEnginePowerMultiplier(veh, 2.0 * 20.0)
+            elseif vehClass == 16 then
+                SetVehicleEnginePowerMultiplier(veh, 2.0 * 500.0)
+            end
+        end
+    end
 end)
